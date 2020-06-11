@@ -1,13 +1,13 @@
 ## Installation Steps and Basic instructions
 - step 1: download zip file from github and unzip the files or clone the file from the repository link: https://github.com/Fortune-codebox/ice_and_fire_api
 
--step 2: navigate into the root folder through the command prompt and type in >> composer install : this downloads all dependencies.
+- step 2: navigate into the root folder through the command prompt and type in >> composer install : this downloads all dependencies.
 
--step 3: create a database manually with the name: ice_and_fire  
+- step 3: create a database manually with the name: ice_and_fire  
 
--step 4: run the command >> php artisan migrate : this runs the migration and create database tables
+- step 4: run the command >> php artisan migrate : this runs the migration and create database tables
 
--step 5: run >> php artisan serve : this serves the project and now ready for connections
+- step 5: run >> php artisan serve : this serves the project and now ready for connections
 
 ## Book Api Urls
 
