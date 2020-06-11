@@ -11,11 +11,11 @@
 
 ## Book Api Urls
 
--POST >> http://localhost:8000/api/v1/books --create a book
--GET >>  http://localhost:8000/api/v1/books --get all books
--GET >> http://localhost:8000/api/v1/books/:id --get a single book
--PATCH >> http://localhost:8000/api/v1/books/:id --update a book
--DELETE >> http://localhost:8000/api/v1/books/:id --delete a book
+-POST >> http://localhost:8000/api/v1/books --create a book <br>
+-GET >>  http://localhost:8000/api/v1/books --get all books <br>
+-GET >> http://localhost:8000/api/v1/books/:id --get a single book <br>
+-PATCH >> http://localhost:8000/api/v1/books/:id --update a book <br>
+-DELETE >> http://localhost:8000/api/v1/books/:id --delete a book <br>
 -GET >> http://localhost:8000/external-book?name=:nameOfBook -- get a book from an external api by passing in the url param of the book name.
 
 ## Testing Resources
