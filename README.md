@@ -19,7 +19,10 @@
 -GET >> http://localhost:8000/external-book?name=:nameOfBook -- get a book from an external api by passing in the url param of the book name.
 
 ## Testing Resources
+-- navigate from the root folder >> reports/index.html to see test coverage results
 
+You can also configure xdebug on your localdrive before running tests by following instructions at >> 
+https://xdebug.org
 -- for testing simply run the command on the root folder >> ./vendor/bin/phpunit
 
 ## Contributing
