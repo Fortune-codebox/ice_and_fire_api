@@ -3,7 +3,7 @@
 
 - step 2: navigate into the root folder through the command prompt and type in >> composer install : this downloads all dependencies.
 
-- step 3: make sure to have installed mysql and xampp on your local system then create a database manually with the name: ice_and_fire  
+- step 3: make sure you have installed xampp, wampp or mampp depending on operating system and usages then create a database manually with the name: ice_and_fire  
 
 - step 4: run the command >> php artisan migrate : this runs the migration and create database tables
 
