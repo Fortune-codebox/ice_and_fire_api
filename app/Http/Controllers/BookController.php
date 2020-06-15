@@ -19,8 +19,12 @@ class BookController extends Controller
         $url = 'https://www.anapioficeandfire.com/api/books?name=' . $query;
         $response = Http::get($url)->json();
         $formattedBook = $this->formattedExternal($response);
+        if($response) {
+            return $this->apiResponse(200, 'success', $formattedBook);
+        }
 
-        return $this->apiResponse(200, 'success', $formattedBook);
+        return $this->apiResponse(200, 'success', []);
+        
     }
 
     /**
@@ -28,10 +32,20 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $req)
     {
+        // here we get all filter queries inputted on the search
+        $nameQuery = $req->get('name');
+        $countryQuery = $req->get('country');
+        $publisherQuery = $req->get('publisher');
+        $releaseDateQuery = $req->get('release_date');
+        // This condition is met when any of the filter queries is passed in for a search
+        if($nameQuery || $countryQuery || $publisherQuery || $releaseDateQuery) {          
+           return $this->search($nameQuery, $countryQuery, $publisherQuery, $releaseDateQuery);
+        }
+        
+        // This happens when there are no filter queries
        $books = Book::latest()->get();
-    //    dd($books);
        if($books) {
         $resourced = BookResource::collection($books);
         return $this->apiResponse(200, 'success', $resourced);
@@ -58,6 +72,31 @@ class BookController extends Controller
         return $this->apiResponse(201, 'success', $formattedBook);
         
        
+    }
+
+    private function search($name, $country, $publisher, $date) {
+        
+        $filter = [];
+
+        if($name){
+            $filter = array_merge($filter, ['name' => $name]);
+        }
+
+        if($country){
+            $filter =  array_merge($filter, ['country' => $country]);
+        }
+
+        if($publisher){
+            $filter =  array_merge($filter, ['publisher' => $publisher]);
+        }
+
+        if($date){
+            $filter =  array_merge($filter, ['release_date' => $date]);
+        }
+        
+        $books = Book::where($filter)->latest()->get();
+        $resourced = BookResource::collection($books);
+        return $this->apiResponse(200, 'success', $resourced);
     }
 
 

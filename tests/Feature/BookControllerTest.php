@@ -78,6 +78,20 @@ class BookControllerTest extends TestCase
         ]);
     }
 
+    public function testGetBooksWithSearch() {
+        $book = factory(Book::class, 1)->create();
+
+        $response = $this->getJson('/api/v1/books?publisher=The Mob');
+        
+        $response->assertJson([
+            'status_code' => 200,
+            'status' => 'success',
+            'data' => [],
+        ]);
+    }
+
+    
+
     public function testGetBooksIfNoBooksExist() {
         $response = $this->getJson('/api/v1/books');
         

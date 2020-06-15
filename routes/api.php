@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => '/v1'], function() {
     Route::post('/books', 'BookController@store');
-    Route::get('/books', 'BookController@index');
+    Route::get('/books{name?&}{country?&}{publisher?&}{release_date?}', 'BookController@index');
     Route::get('/books/{id}', 'BookController@show');
     Route::delete('/books/{id}', 'BookController@delete');
     Route::patch('/books/{id}', 'BookController@update');

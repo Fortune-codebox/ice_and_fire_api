@@ -33,6 +33,7 @@ trait BookTrait {
     protected function formatted($data) {
         $key = [];
             foreach($data as $value) {
+                $key['id'] = $data['id'];
                 $key['name'] =  $data['name'];
                 $key['isbn'] = $data['isbn'];
                 $key['authors'] = [ 
