@@ -29,7 +29,7 @@
 -GET >> http://localhost:8000/api/v1/books?publisher=:publisherName, filters and return a response message of all the records with the searched publisher <br>
 -GET >> http://localhost:8000/api/v1/books?release_date=:releaseDate, filters and return a response message of all the records with the searched release date <br>
 
-you can also use more than one or all four of them together to filter further the data records you wanna receive example
+you can also use more than one or all four of them together to filter further the data records you wanna receive example <br>
 -GET >> http://localhost:8000/api/v1/books?name=:nameOfBook&country=:countryName&publisher=:publisherName&release_date=:releaseDate <br>
 
 Note: 
@@ -38,7 +38,7 @@ Note:
 - the url >> http://localhost:8000/api/v1/books >> returns all books existing except you pass in a valid searchables of any of the four filters listed above .i.e http://localhost:8000/api/v1/books?name=Harry Potter&release_date=2020-10-03 <br> 
 - Don't forget to add '&' symbol when adding multiple searchables to filter the records further <br>
 - Make sure the search values are valid and existing else it will return an empty data array <br>
-- if filtering with all four searchables, all values must be correct for it to filter out properly <br>
+- if filtering with all four searchables, all values must be correct for it to filter out properly<br>
 
 ## Testing Resources
 - Navigate from the root folder >> tests/Feature/BookControllerTest.php to see the tests written <br>
